@@ -1,0 +1,71 @@
+<%- include("dashboardpartials/dheader"); -%>
+    <div id="posts" class="posts" style="font-size: 2rem;">
+
+        <form action="/delete" method="post">
+            <% if (events.length> 0) { %>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>S:N.</th>
+                            <th>Event Title</th>
+                            <th>Event Body</th>
+                            <th>Bookings</th>
+                            <th>View Details</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% events.forEach(function(event, index) { %>
+                            <tr>
+                                <td>
+                                    <%= index + 1 %>
+                                </td>
+                                <td>
+                                    <h2 class="common-heading-md"><strong>
+                                            <%= event.eventTitle %>
+                                        </strong></h2>
+                                </td>
+                                <td>
+                                    <p contenteditable="true" class="postans">
+                                        <%= event.eventBody %>
+                                    </p>
+                                </td>
+                                <td>
+                                    <% if (event.bookings && event.bookings.length> 0) { %>
+                                        <ul>
+                                            <!-- <% event.bookings.forEach(function(booking) { %>
+                                            <li>
+                                                <%= booking.userName %> <br>
+                                                <%= booking.phoneNumber %> <br>
+                                                <%= booking.email %>
+                                            </li>
+                                        <% }) %> -->
+
+                                            <li>
+                                                <%=event.bookings.length %>
+                                            </li>
+                                        </ul>
+                                        <% } else { %>
+                                            No bookings
+                                            <% } %>
+                                </td>
+                                <td><a href="/allevents/<%= event._id %>" class="btn btn-sm btn-info">View Details</a>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="checkboxfordelete" onchange="this.form.submit()"
+                                            value="<%= event._id %>"
+                                            onclick="return confirm('Are you sure you want to delete this item?');">
+                                        Delete
+                                    </label>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+                <% } else { %>
+                    <p>No events to display.</p>
+                    <% } %>
+        </form>
+
+    </div>

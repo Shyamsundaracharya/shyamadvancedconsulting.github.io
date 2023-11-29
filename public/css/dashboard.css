@@ -1,0 +1,297 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar styles */
+navbar {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Count container styles */
+.count-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.counting {
+  border: 1px solid #fffff6;
+  box-shadow: 13px 5px 15px grey;
+  padding: 2%;
+  cursor: pointer;
+  margin-left: 3%;
+  color: #000000;
+  border-radius: 15px;
+}
+
+.counting a {
+  text-decoration: none;
+}
+
+.counting:hover {
+  background: red;
+  border-radius: 20px;
+  transition-duration: 1s;
+  color: #ffffff;
+}
+
+/* Dashboard Navbar styles */
+.dashboardnav {
+  height: 65vh;
+  width: 170px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  background-color: #357EC7;
+
+
+  border-radius: 10px;
+}
+
+/* Style page content */
+.main {
+  margin-left: 32px;
+    /* background-color: #6fa8dc; */
+}
+
+/* The navigation menu links */
+.dashboardnav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.dashboardnav .companyname {
+  font-size: 1.5rem;
+  color: red;
+}
+
+.dashboard-heading {
+  margin-top: -6%;
+  margin-left:-4%;
+  margin-bottom: 4%;
+
+}
+
+.dashboard-heading-admin {
+  margin-top: 1%;
+
+}
+
+/* Emails styles */
+.emails {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border: 1px solid red;
+  padding: 1%;
+  background-color: lightblue;
+  border-radius: 10px;
+  margin-bottom: 2%;
+}
+
+.eachemail {
+  padding: 10px;
+}
+
+.customeremail::first-letter {
+  text-transform: capitalize;
+  margin-left: 5px;
+}
+
+/* Navbar styles */
+.dropbtn {
+  margin: 0 45%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 165px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 1px, 0, 0.3);
+  z-index: 1;
+  border-radius: 15px;
+  margin: 0 6%;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 18px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #975ab6;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  width: auto;
+}
+
+.posts-dropbtn {
+  border: 1px solid grey;
+  border-left-style: none;
+  border-right-style: none;
+}
+
+/* Messages styles */
+.messages {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-self: unset;
+}
+
+.message-card {
+  border: 1px solid blueviolet;
+  padding: 2%;
+  width: 25%;
+  border-radius: 10px;
+  box-shadow: #975ab6;
+  margin: 1% 2%;
+  background-color: rgb(230, 231, 250);
+}
+
+/* Posts page admin styles */
+.posts {
+  padding: 1%;
+  margin-left: -6%;
+}
+
+.postans {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: large;
+}
+
+.eachpost {
+
+  padding: 15px;
+
+  border-radius: 10px;
+  margin-bottom: 1.6%;
+  background-color: #f1f1f5;
+}
+
+/* Compose form styles */
+.form-group {
+  border-radius: 20px;
+  box-shadow: 1px 1px 14px grey;
+}
+
+.compose-form {
+  margin: 0;
+  width: 60%;
+  padding: 20px;
+}
+
+.form-group tr {
+  padding: 4%;
+}
+
+.compose-label {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1%;
+}
+
+
+
+
+
+/* Media queries for responsiveness */
+
+
+
+
+
+@media screen and (max-width: 900px) {
+  .main {
+    margin-left: 68px;
+  }
+
+  .dashboardnav {
+    height: 60vh;
+    width: 100px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    /* padding-top: 15px; */
+    /* padding-bottom: 15px; */
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    background-color: #357EC7;
+    font-size: 0.8rem;
+}
+
+
+.dashboardnav a{
+  font: 100;
+  font-size: 1rem;
+}
+  .dashboard-heading,
+  .dashboard-heading-admin {
+    margin-left: 0;
+  }
+
+  .compose-form {
+    width: 100%;
+  }
+
+  .posts,
+  .eachpost {
+    margin-left: 0;
+  }
+
+  .message-card {
+    width: 100%;
+  }
+  
+ 
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+
+  .main {
+    margin-left: 150px;
+  }
+
+  .dashboard-heading {
+    margin-top: -4%;
+    margin-left: 10%;
+  }
+}

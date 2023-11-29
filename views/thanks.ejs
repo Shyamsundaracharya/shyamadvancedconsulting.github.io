@@ -1,0 +1,31 @@
+
+<%-include("partials/header"); -%>
+
+
+
+
+<div class="main mobile-thanks " style="margin:15.6% 3%; text-align:center;">
+
+  <div class="alert alert-danger" id="errorMessage">
+ Successfully booked!!
+</div>
+  <h2 class="common-heading-md mobile-thanks"> Thank you for booking an event with us   </h2>
+ <p class="common-para"> We will update any further information through your mail.</p>
+</div>
+
+
+
+
+       <!-- JavaScript to close the error message after 4 seconds -->
+       <script>
+        setTimeout(function () {
+            closeErrorMessage();
+        }, 4000);
+
+        function closeErrorMessage() {
+            var errorMessage = document.getElementById("errorMessage");
+            errorMessage.style.display = "none";
+        }
+    </script>
+
+<%-include("partials/footer"); -%>

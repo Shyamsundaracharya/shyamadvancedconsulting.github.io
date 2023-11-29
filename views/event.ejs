@@ -1,0 +1,53 @@
+<%- include("dashboardpartials/dheader"); -%>
+
+  <div class="eachpost">
+    <h3 class="common-heading-md commonsize common-heading-forquestion"> <%= eventTitle %>
+    </h3>
+    <hr />
+
+    <p class="postans">
+      <%= eventBody %>
+    </p>
+
+  </div>
+  <hr>
+  <br>
+  <br>
+
+
+
+  <% if (bookings && bookings.length> 0) { %>
+    <h2> Booking details for this event</h2>
+    <br>
+  <br>
+    <table style="border-collapse: collapse; width: 100%;">
+      <thead style="background-color: #f1f1f5;">
+        <tr>
+          <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">S.N</th>
+          <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Fullname</th>
+          <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Number</th>
+          <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Email a</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% bookings.forEach(function (booking, index) { %>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px;">
+              <%= index + 1 %>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px;">
+              <%= booking.userName %>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px;">
+              <%= booking.phoneNumber %>
+            </td>
+            <td style="border: 1px solid #ddd; padding: 8px;">
+              <%= booking.email %>
+            </td>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+    <% } else { %>
+      <p>No bookings for this event.</p>
+      <% } %>

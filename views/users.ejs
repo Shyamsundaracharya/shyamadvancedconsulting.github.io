@@ -1,0 +1,65 @@
+<%-include("dashboardpartials/dheader"); -%>
+
+    <h2 class="common-heading-lg"> All users </h2>
+
+    <div class="errormsgcard">
+        <div class="errormesg">
+
+        </div>
+    </div>
+
+    <!-- <div class="emails">
+
+        <form class="" action="/allusers/delete" method="post">
+
+
+            <%users.forEach(function(user){ %>
+                <div class="col-lg-4 eachemail">
+                    <table>
+                        <tr>
+                            <th> S:N. </th>
+                            <td class="customeremail">
+                                <%=user.username %>
+                            </td>
+
+                        </tr>
+                    </table>
+
+                    <button type="checkbox" name="checkboxofsubscriberdelete" onchange="this.form.submit()"
+                        value="<%=user._id%>" onclick="return confirm('Are you sure you want to delete this item?');"
+                        class="btn btn-warning "> Delete </button>
+                </div>
+                <% }) %>
+
+
+        </form>
+    </div> -->
+
+    <div class="emails">
+        <form action="/allusers/delete" method="post">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>S:N.</th>
+                        <th>Username</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% users.forEach(function(user, index) { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td class="customeremail"><%= user.username %></td>
+                            <td>
+                                <button type="checkbox" name="checkboxofsubscriberdelete" onchange="this.form.submit()"
+                                    value="<%= user._id %>"
+                                    onclick="return confirm('Are you sure you want to delete this item?');"
+                                    class="btn btn-warning">Delete</button>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    

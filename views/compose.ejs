@@ -1,0 +1,31 @@
+<%- include("dashboardpartials/dheader"); -%>
+
+<div style="max-width: 600px;">
+  <h2 style="font-size: 2rem; margin-bottom: 20px;">Create an Event</h2>
+
+  <form style="display: flex; flex-direction: column;" action="/compose" method="post">
+    <div style="margin-bottom: 20px;">
+      <label for="topic" style="font-size: 2rem; margin-bottom: 5px;">Category</label>
+      <input type="text" name="topic" style="width: 100%; padding: 8px; font-size: 2rem; border: 1px solid #ccc; border-radius: 4px;" placeholder="Topics related to..." required>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <label for="title" style="font-size: 2rem; margin-bottom: 5px;">Event Title</label>
+      <input type="text" name="posttitle" style="width: 100%; padding: 8px; font-size: 2rem; border: 1px solid #ccc; border-radius: 4px;" placeholder="Title or question..." required>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <label for="post" style="font-size: 2rem; margin-bottom: 5px;">Description</label>
+      <textarea name="postbody" style="width: 100%; padding: 8px; font-size: 2rem; border: 1px solid #ccc; border-radius: 4px;" rows="4" placeholder="Details about the topic" required></textarea>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <label for="post" style="font-size: 2rem; margin-bottom: 5px;">Images/Files</label>
+      <input type="file" name="File" value="">
+    </div>
+
+    <div>
+      <button type="submit" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 2rem;" class="btn-primary">Publish</button>
+    </div>
+  </form>
+</div>
